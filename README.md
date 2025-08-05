@@ -1,4 +1,4 @@
-# chatgpt_practice
+# Note_App
 
 A new Flutter project.
 
