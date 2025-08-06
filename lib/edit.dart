@@ -13,13 +13,17 @@ class _EditNoteState extends State<EditNote> {
   TextEditingController titleController = TextEditingController();
   TextEditingController noteController = TextEditingController();
 
-  bool isInitialized = false; // ✅ Used to avoid reset on rebuild
+  //bool isInitialized = false; // ✅ Used to avoid reset on rebuild
 
   @override
   Widget build(BuildContext context) {
     // ✅ Set initial text only once
-    if (!isInitialized && widget.currentitems != null) {
+    /* if (!isInitialized && widget.currentitems != null) {
       isInitialized = true;
+    }*/
+    if (widget.currentitems != null) {
+      titleController.text = widget.notes[widget.currentitems!]['title'] ?? '';
+      noteController.text = widget.notes[widget.currentitems!]['note'] ?? '';
     }
 
     return Scaffold(
